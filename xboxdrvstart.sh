@@ -122,6 +122,12 @@ eduke32tayle="--ui-buttonmap du=KEY_UP+KEY_W,dd=KEY_DOWN+KEY_S,dl=KEY_LEFT,dr=KE
 # PCSX-ReARMed (L2 is now Select+L, R2 is now Select+R, Select is now Select+Start to avoid input conflicts)
 pcsxtayle="--ui-buttonmap x=KEY_D,a=KEY_X,b=KEY_Z+KEY_ENTER,Y=KEY_S,lb=KEY_W,back+lb=KEY_E,rb=KEY_R,back+rb=KEY_T,start=KEY_V,back+start=KEY_C, \
     --ui-buttonmap back+x=KEY_ESC,start+lb=KEY_F1,start+rb=KEY_F2"
+    
+##### Adam's Custom Script Additions #####
+#Custom emulator/core additions for xboxdrv script
+#drastic=--ui-buttonmap b=KEY_LEFTSHIFT,y=KEY_LEFTCTRL,a=KEY_Z,x=KEY_LEFTALT,lb=KEY_SPACE,rb=KEY_X,start=KEY_ENTER,back=KEY_TAB \
+#       --ui-buttonmap back+start=KEY_ESC,back+lb=KEY_HOLDER,back+rb=KEY_HOLDER,back+y=KEY_HOLDER,back+a=KEY_HOLDER"
+drastic="--ui-buttonmap back+start=KEY_ESC"
 
 #every map should be using either nograb, passthrough, or a variant of passthrough if swapping buttons around.
 
@@ -199,6 +205,10 @@ case $2 in
 		$xboxkill
 		daemonize $basicGPI $dpad $eduke32tayle
 	;;
+	drastic)
+                $xboxkill
+                daemonize $basicGPI $nograb $drastic
+        ;;
 	minecraft)
 		$xboxkill
 		daemonize $basicGPI $dpad $minecraft
