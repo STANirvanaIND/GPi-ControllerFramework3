@@ -17,7 +17,7 @@ These xboxdrv controller scripts greatly enhance the capabilities of your Gpi Ca
 ## Update the menu
 
 ```shell
-cd && cd RetroPie/retropiemenu && wget -O migrate-controllertools.sh  https://raw.githubusercontent.com/SinisterSpatula/Gpi3/master/migrate-controllertools.sh && sudo chmod 775 migrate-controllertools.sh && sudo rm control_updater_menu.sh
+cd && cd RetroPie/retropiemenu && wget -O migrate-controllertools.sh  https://raw.githubusercontent.com/STANirvanaIND/GPi-ControllerFramework3/master/migrate-controllertools.sh && sudo chmod 775 migrate-controllertools.sh && sudo rm control_updater_menu.sh
 ```
 
 ## Then run this command
