@@ -1,3 +1,9 @@
+##### Forked repo with my custom changes.  Current additions listed below.  
+-Drastic Support
+
+
+##### Original Readme below
+
 # Gpi3 scripts
 
 ### As of January 1st 2020 I'm not actively maintaining this project anymore.  Feel free to fork it, and modify it, or become the new maintainer of it if you like.  I'll still try to provide help if and when I can.
