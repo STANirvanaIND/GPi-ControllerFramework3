@@ -125,9 +125,9 @@ pcsxtayle="--ui-buttonmap x=KEY_D,a=KEY_X,b=KEY_Z+KEY_ENTER,Y=KEY_S,lb=KEY_W,bac
     
 ##### Adam's Custom Script Additions #####
 #Custom emulator/core additions for xboxdrv script
-#drastic=--ui-buttonmap b=KEY_LEFTSHIFT,y=KEY_LEFTCTRL,a=KEY_Z,x=KEY_LEFTALT,lb=KEY_SPACE,rb=KEY_X,start=KEY_ENTER,back=KEY_TAB \
-#       --ui-buttonmap back+start=KEY_ESC,back+lb=KEY_HOLDER,back+rb=KEY_HOLDER,back+y=KEY_HOLDER,back+a=KEY_HOLDER"
-drastic="--ui-buttonmap back+start=KEY_ESC"
+drastic="--ui-buttonmap b=KEY_LEFTCTRL,y=KEY_X,a=KEY_SPACE,x=KEY_Z,lb=KEY_LEFTSHIFT,rb=KEY_C,start=KEY_ENTER,back=KEY_RIGHTSHIFT \
+        --ui-buttonmap back+start=KEY_ESC,back+lb=KEY_F7,back+rb=KEY_F5,back+y=KEY_T,back+a=KEY_S"
+#drastic="--ui-buttonmap back+start=KEY_ESC,back+lb=KEY_F7,back+rb=KEY_F5,back+y=KEY_T,back+a=KEY_S,back+b=KEY_S"
 
 #every map should be using either nograb, passthrough, or a variant of passthrough if swapping buttons around.
 
@@ -141,6 +141,11 @@ passthrough="--buttonmap a=a,b=b,x=x,y=y,back=back,start=start,lb=lb,rb=rb \
 #For games that need D-pad to arrow key's.
 dpad="--dpad-as-button \
       --evdev-absmap ABS_X=dpad_x,ABS_Y=dpad_y \
+      --ui-buttonmap du=KEY_UP,dd=KEY_DOWN,dl=KEY_LEFT,dr=KEY_RIGHT"
+
+#For games where above config does not work (ie. Drastic)
+dpad2="--dpad-as-button \
+      --evdev-absmap ABS_HAT0X=dpad_x,ABS_HAT0Y=dpad_y \
       --ui-buttonmap du=KEY_UP,dd=KEY_DOWN,dl=KEY_LEFT,dr=KEY_RIGHT"
 
 ### Kill Command
@@ -207,7 +212,7 @@ case $2 in
 	;;
 	drastic)
                 $xboxkill
-                daemonize $basicGPI $nograb $drastic
+                daemonize $basicGPI $dpad2 $drastic
         ;;
 	minecraft)
 		$xboxkill
